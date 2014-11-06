@@ -1,0 +1,103 @@
+html {
+  text-align: center;
+  background-color: #F9F9F9; /*#F5F5DC*/
+}
+
+.container {
+  margin-top: 50px;
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+}
+#year, #month {
+  display: inline;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+#calendar {
+  width: 100%;
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  padding: 1px;
+  overflow: hidden;
+  margin: 0;
+  background-color: #E6EBEA;
+  border-radius: 0.5em 0.5em .5em .5em;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+
+}
+#calendar * {
+  -moz-box-sizing: inherit;
+       box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color:black;
+}
+
+#calendar #week, #calendar #days {
+  display: inline-block;
+  float: right;
+  width: 100%;
+}
+#calendar #week > li, #calendar #days > li {
+  border-radius: 0.5em 0.5em .5em .5em;
+  padding: .5em;
+  border: 0.1em solid #CCD1D0;
+  display: inline-block;
+  width: 14.28571%;
+  height: auto;
+  float: left;
+  overflow: hidden;
+}
+#calendar #week {
+  border-radius: .5em .5em 0.5em 0.5em;
+  overflow: hidden;
+}
+#calendar #week > li {
+  font-weight: bold;
+  color: #F5F5DC;
+  background-color: #56564D;
+}
+#calendar #days {
+  border: 1px solid transparent;
+  border-bottom: 0;
+  overflow: hidden;
+  /* 
+   * Weekday start:
+   *  Those classname rules are numerical to avoid the misleading .<weekday> naming.
+   *  When week starts on monday, start-2 is tuesday, but when it starts on sunday, start-2 becomes monday.
+   */
+}
+#calendar #days > li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: #fcfcf3;
+  cursor: pointer: ;
+}
+#calendar #days > li#today {
+  background-color: rgba(116, 77, 98, 0.3);
+}
+#calendar #days > li:hover {
+  background-color: rgba(116, 194, 98, 0.5);
+}
+#calendar #days.start-1 > li:first-child {
+  margin-left: 0%;
+}
+#calendar #days.start-2 > li:first-child {
+  margin-left: 14.25%;
+}
+#calendar #days.start-3 > li:first-child {
+  margin-left: 28.5%;
+}
+#calendar #days.start-4 > li:first-child {
+  margin-left: 42.75%;
+}
+#calendar #days.start-5 > li:first-child {
+  margin-left: 57%;
+}
+#calendar #days.start-6 > li:first-child {
+  margin-left: 71.25%;
+}
+#calendar #days.start-0 > li:first-child, #calendar #days.start-7 > li:first-child {
+  margin-left: 85.5%;
+}
