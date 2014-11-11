@@ -8,10 +8,12 @@ var espacios = {
 area = document.getElementsByClassName("area")
 
 for(var i=0;i<area.length;i++){
-  area[i].addEventListener("click",changeRoom)
+  area[i].onclick = changeRoom;
+  console.log(area[i])
 }
 
 function changeRoom(){
+	console.log("hola")
   var sala = this.id;
   document.getElementById("mapa").src=espacios[sala];
 }
