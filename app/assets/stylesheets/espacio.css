@@ -12,4 +12,6 @@
 #mapa{
 	width: 400px;
 	height: 533px;
+	orgHeight: 533px;
+	orgWidth: 400px;
 }

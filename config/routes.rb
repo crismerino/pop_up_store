@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'contacto' => 'static_pages#contacto'
 
+  post 'peticion' => 'static_pages#peticion'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
