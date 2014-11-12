@@ -17,17 +17,18 @@ function changeData(data){
 }
 
 function changeRoom(){
-	console.log("hola")
   var sala = this.id;
   document.getElementById("mapa").src=espacios[sala];
   sala = {"title": this.title};
 
-  $.post(
-    "/peticion",
-    JSON.stringify(sala),
-    function (data){
+  $.ajax({
+    type: "POST",
+    url: "/peticion",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: JSON.stringify(sala),
+    success: function (data){
       salaSeleccionada = data;
       changeData(salaSeleccionada);
     }
-  )
+  })
 }
