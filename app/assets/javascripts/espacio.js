@@ -13,8 +13,7 @@ for(var i=0;i<area.length;i++){
 
 function changeData(data){
   cajaEventos = document.getElementsByClassName("cajaEventos")[0];
-  cajaEventos.textContent=data.nombre;
-  // console.log("It Works " + data.nombre);
+  cajaEventos.innerHTML = "<br>" + "<br>" + "<br>" + data.nombre + "<br>"+ "<br>" + "Aforo: " + data.capacidad + "<br>" + "Descripcion: " + data.descripcion;
 }
 
 function changeRoom(evt){
