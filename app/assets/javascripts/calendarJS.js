@@ -52,7 +52,6 @@ function showInfo (evt)
     }
   })
 
-  // // Fucking paranoia
  function sacaEventos(data){
     if (data) {
       document.getElementById('bottomcalendario').innerHTML = ""

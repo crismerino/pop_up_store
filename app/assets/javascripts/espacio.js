@@ -12,7 +12,9 @@ for(var i=0;i<area.length;i++){
 }
 
 function changeData(data){
-  console.log("It Works" + data.nombre)
+  cajaEventos = document.getElementsByClassName("cajaEventos");
+  cajaEventos.innerText="prueba";
+  console.log("It Works " + data.nombre);
 }
 
 function changeRoom(){
