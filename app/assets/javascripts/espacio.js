@@ -8,19 +8,20 @@ var espacios = {
 area = document.getElementsByClassName("area")
 
 for(var i=0;i<area.length;i++){
-  area[i].onclick = changeRoom;
+  area[i].addEventListener('click',changeRoom);
 }
 
 function changeData(data){
-  cajaEventos = document.getElementsByClassName("cajaEventos");
-  cajaEventos.innerText="prueba";
-  console.log("It Works " + data.nombre);
+  cajaEventos = document.getElementsByClassName("cajaEventos")[0];
+  cajaEventos.textContent="prueba";
+  // console.log("It Works " + data.nombre);
 }
 
-function changeRoom(){
-  var sala = this.id;
+function changeRoom(evt){
+  console.log('evento:', evt);
+  var sala = evt.target.id;
   document.getElementById("mapa").src=espacios[sala];
-  sala = this.title;
+  sala = evt.target.title;
 
   $.ajax({
     type: "POST",
