@@ -15,9 +15,6 @@ var calendar = {
   }
 }
 
-console.log(calendar.today);
-//logs to console the new "Date()" object
-
 calendar.setDay(calendar.today.getDate());
 //this passes to setDay, the day (number) using getDate.
 calendar.setMonth(calendar.today.getMonth());
@@ -35,18 +32,35 @@ for (i=0; i<daysList.length; i++)
 
 };
 
-var eventCard = {
+/*var eventCard = {
   20141121: {img:"http://lorempixel.com/400/350/cats/1", text: "Gatos, gatos everywhere! GATOOOOOOS!!"}
-};
+}*/
 //console.log(eventCard['20141121']);
 
 function showInfo (evt)
 {
-  var clickedDay = calendar.today.getFullYear().toString() + (calendar.today.getMonth() + 1).toString() +evt.target.textContent.toString(); // Fucking paranoia
+  var clickedDay = calendar.today.getFullYear().toString()+ "-" + (calendar.today.getMonth() + 1).toString()+ "-" +evt.target.textContent.toString();
 
-  if (eventCard[clickedDay]) {
-    var newImg = document.getElementById('fotoevento').children[0].src = eventCard[clickedDay].img;
+  $.ajax({
+    type: "POST",
+    url: "/peticion_eventos",
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+    data: clickedDay,
+    success: function (data){
+      console.log("Hola")
+      sacaEventos(data);
+    }
+  })
 
-    document.getElementById('bottomcalendario').textContent = eventCard[clickedDay].text;
-  }
+  // // Fucking paranoia
+ function sacaEventos(data){
+    if (data) {
+      for(var i = 0 ; i < data.length ; i++){
+        var evento = document.createTextNode(data[i].organizador+": "+data[i].descripcion+"\n")
+        document.getElementById('bottomcalendario').appendChild(evento);        
+      }
+      //eventCard[clickedDay].text;
+      //var newImg = document.getElementById('fotoevento').children[0].src = eventCard[clickedDay].img;
+    }
+  }  
 }

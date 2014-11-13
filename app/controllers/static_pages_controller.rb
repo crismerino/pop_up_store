@@ -1,21 +1,13 @@
 class StaticPagesController < ApplicationController
 
-	def home
-	end
-
-	def espacio
-	end
-
-	def evento
-	end
-
-	def blog
-	end
-
-	def nosotros
-	end
-
-	def contacto
+	def peticion_eventos
+		if request.xhr?
+			fecha_evento = request.body.read.to_s
+			@selected_events = Evento.where(dia: fecha_evento)
+			render json: @selected_events
+		else
+			render 'error'
+		end
 	end
 
 	def peticion

@@ -60,7 +60,7 @@ nav li:hover {
 	color:#FFFFFF;
 }
 
-article {
+.comentarioPadre {
 	width: 80%;
 	display: block;
 	margin: 0 auto;
@@ -113,7 +113,7 @@ h1 {
 	font-size: 90%;
 }
 .complement{
-	width: 81.9%;
+	width: 82.2%;
 	height: 40px;
 	margin: 0 auto;
 	background-color: #40e0d0;

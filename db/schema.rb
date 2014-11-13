@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20141111143628) do
     t.datetime "updated_at"
     t.string   "organizador"
     t.string   "lugar"
-    t.integer  "dia"
+    t.string   "dia"
     t.integer  "hora"
     t.integer  "duracion"
     t.decimal  "precio"
