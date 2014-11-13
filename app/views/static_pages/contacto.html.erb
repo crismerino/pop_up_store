@@ -13,16 +13,30 @@
 	</ul>
 </nav>
 <section>
-	<!--<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-	  <%= devise_error_messages! %>
+	<%= form_for @contacto do |contact| %>
 
 	  <div class="field">
-	    <%= f.label :name %><br />
-	    <%= f.text_field :name, autofocus: true %>
+	    <%= contact.label :name %><br />
+	    <%= contact.text_field :name %>
 	  </div>
-	<% end %>-->
 
-	<form id="formContacto" name="form1" method="post" onsubmit="validar();return false "> 
+	  <div class="field">
+	    <%= contact.label :email %><br />
+	    <%= contact.email_field :email %>
+	  </div>
+
+	  <div class="field">
+	    <%= contact.label :asunto %><br />
+	    <%= contact.text_field :asunto %>
+	  </div>
+
+	  <div class="field">
+	    <%= contact.label :comentario %><br />
+	    <%= contact.text_field :comentario %>
+	  </div>
+	<% end %>
+
+	<!--<form id="formContacto" name="form1" method="post" onsubmit="validar();return false "> 
 		Nombre <input class="formulario" type="text" id="txt1" name="nombre" />
 		<div class="alerta" id="errNombre">Este campo no puede estar vacio.</div>
 		E-mail <input class="formulario" type="text" id="txt2" name="email" />
@@ -32,7 +46,7 @@
 		Mensaje <input class="formulario1" type="text" id="txt4" name="mensaje" />
 		<div class="alerta" id="errMensaje">Este campo no puede estar vacio.</div>
 		<button class="enviar" onclick="validar;"> Enviar </button>
-	</form>
+	</form>-->
 </section>
 <footer class="fin">
 	<section>

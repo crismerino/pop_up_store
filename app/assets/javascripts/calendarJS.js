@@ -55,6 +55,7 @@ function showInfo (evt)
   // // Fucking paranoia
  function sacaEventos(data){
     if (data) {
+      document.getElementById('bottomcalendario').innerHTML = ""
       for(var i = 0 ; i < data.length ; i++){
         var evento = document.createTextNode(data[i].organizador+": "+data[i].descripcion+"\n")
         document.getElementById('bottomcalendario').appendChild(evento);        

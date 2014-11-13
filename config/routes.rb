@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get 'contacto' => 'static_pages#contacto'
 
+  resources :contacto, only: [:show]
+
   post 'peticion' => 'static_pages#peticion'
   post 'peticion_eventos' => 'static_pages#peticion_eventos'
 

@@ -19,4 +19,13 @@ class StaticPagesController < ApplicationController
 			render 'error'
 		end
 	end
+
+	def contacto
+		@contacto = Contacto.new
+	end
+
+	private
+	def contac_params
+		params.require(:contacto).permit(:name, :email, :asunto, :comentario)
+	end
 end
