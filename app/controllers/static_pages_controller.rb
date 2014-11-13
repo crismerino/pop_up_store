@@ -20,12 +20,11 @@ class StaticPagesController < ApplicationController
 
 	def peticion
 		if request.xhr?
-			puts "eeee"
-			@sala = JSON.parse!(request.body.read.to_s)
-			@selected_sala = Sala.where(name: @sala)
-			render json: "@selected_sala"
+			@sala = request.body.read.to_s
+			@selected_sala = Sala.where(nombre: @sala)
+			render json: @selected_sala[0]
 		else
-			return 'error'
+			render 'error'
 		end
 	end
 end

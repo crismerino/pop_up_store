@@ -9,26 +9,25 @@ area = document.getElementsByClassName("area")
 
 for(var i=0;i<area.length;i++){
   area[i].onclick = changeRoom;
-  console.log(area[i])
 }
 
 function changeData(data){
-  console.log("It Works" + data)
+  console.log("It Works" + data.nombre)
 }
 
 function changeRoom(){
   var sala = this.id;
   document.getElementById("mapa").src=espacios[sala];
-  sala = {"title": this.title};
+  sala = this.title;
 
   $.ajax({
     type: "POST",
     url: "/peticion",
     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-    data: JSON.stringify(sala),
+    data: sala,
     success: function (data){
-      salaSeleccionada = data;
-      changeData(salaSeleccionada);
+      console.log("Hola")
+      changeData(data);
     }
   })
 }
