@@ -12,11 +12,29 @@ for(var i=0;i<area.length;i++){
 }
 
 function changeData(data){
+
   var cajaEventos = document.getElementsByClassName("cajaEventos")[0];
-  var datoEvento = document.createElement('li');
+
+  if (cajaEventos.firstChild){
+    console.log("dentro!");
+    cajaEventos.innerHTML = "";
+  };
+ 
+  var aforoSala = document.createElement('li');
+  aforoSala.textContent = "Aforo: " + data.capacidad + " asistentes.";
+  var descSala = document.createElement('li');                        
+  descSala.textContent = "Descripción: " + data.descripcion;
+
+
+
   var listaEvento = document.createElement('ul')
-  listaEvento.appendChild(datoEvento);
+  listaEvento.textContent = data.nombre;
+
+  listaEvento.appendChild(aforoSala);
+  listaEvento.appendChild(descSala);
   cajaEventos.appendChild(listaEvento);
+
+
 
   //cajaEventos.innerHTML = "<br>" + "<br>" + "<br>" + data.nombre + "<br>"+ "<br>" + "Aforo: " + data.capacidad + "<br>" + "Descripcion: " + data.descripcion;
 }
@@ -33,7 +51,6 @@ function changeRoom(evt){
     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
     data: sala,
     success: function (data){
-      console.log("Hola")
       changeData(data);
     }
   })
