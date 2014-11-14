@@ -12,19 +12,56 @@ for(var i=0;i<area.length;i++){
 }
 
 function changeData(data){
+
   var cajaEventos = document.getElementsByClassName("cajaEventos")[0];
 
-  //cajaEventos.innerHTML = "<br>" + "<br>" + "<br>" + data.nombre + "<br>"+ "<br>" + "Aforo: " + data.capacidad + "<br>" + "Descripcion: " + data.descripcion;
+  var listaEvento = document.createElement('ul');
 
-  var datoEvento = document.createElement('li');
-  var listaEvento = document.createElement('ul')
-  listaEvento.appendChild(datoEvento);
+  if (cajaEventos.firstChild){
+    cajaEventos.innerHTML = "";
+  };
+ 
+  var aforoSala = document.createElement('li');
+  aforoSala.textContent = "Aforo: " + data.capacidad + " asistentes.";
+
+  var descSala = document.createElement('li');                        
+  descSala.textContent = "Descripción: " + data.descripcion + ".";
+
+  var wifiSala = document.createElement('li');                        
+  wifiSala.textContent = "Conexion Wifi disponible.";
+
+  var climaSala = document.createElement('li');                        
+  climaSala.textContent = "Climatizada.";
+
+  if (data.equipo_informatico === true){
+    var audioSala = document.createElement('li');
+    audioSala.textContent = "Multimedia.";
+  }else
+  {
+    var audioSala = document.createElement('li');
+    audioSala.textContent = "No multimedia.";
+  };
+
+  if (data.equipo_informatico === true){
+    var pcSala = document.createElement('li');
+    pcSala.textContent = "Informatizada.";
+  }else
+  {
+    var pcSala = document.createElement('li');
+    pcSala.textContent = "No informatizada.";
+  };
+
+  listaEvento.textContent = data.nombre + ":";
+
+  listaEvento.appendChild(aforoSala);
+  listaEvento.appendChild(descSala);
   cajaEventos.appendChild(listaEvento);
-
+  listaEvento.appendChild(climaSala);
+  listaEvento.appendChild(wifiSala);
+  listaEvento.appendChild(pcSala);
 }
 
 function changeRoom(evt){
-  console.log('evento:', evt);
   var sala = evt.target.id;
   document.getElementById("mapa").src=espacios[sala];
   sala = evt.target.title;
@@ -35,7 +72,6 @@ function changeRoom(evt){
     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
     data: sala,
     success: function (data){
-      console.log("Hola")
       changeData(data);
     }
   })

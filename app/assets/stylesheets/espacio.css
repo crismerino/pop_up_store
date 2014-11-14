@@ -8,12 +8,14 @@
 	margin: 0 auto;
 	width: 70%;	
 	height: 533px;
+	background-color: #262626;
+	padding: 2%;
 
 }
 .cajaEventos{
 	width: 400px;
 	height: 200px;
-	background-color: white;
+	background-color: #262626;
 	display: inline-block;
 	float: right;
 	margin-top: 200px;
@@ -21,6 +23,11 @@
 	border-radius: 5%;
 	font-family: verdana; 
 	font-size: 19px;
+	color: white;
+	text-align: left;
+}
+.cajaEventos li{
+	margin: 3%;
 }
 #mapa{
 	width: 400px;
