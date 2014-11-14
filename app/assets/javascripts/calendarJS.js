@@ -47,20 +47,16 @@ function showInfo (evt)
     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
     data: clickedDay,
     success: function (data){
-      // console.log("Hola")
       sacaEventos(data);
     }
   })
+}
 
  function sacaEventos(data){
     if (data) {
       document.getElementById('bottomcalendario').innerHTML = ""
-      for(var i = 0 ; i < data.length ; i++){
-        var evento = document.createTextNode(data[i].organizador+": "+data[i].descripcion+"\n")
-        document.getElementById('bottomcalendario').appendChild(evento);        
-      }
-      //eventCard[clickedDay].text;
-      //var newImg = document.getElementById('fotoevento').children[0].src = eventCard[clickedDay].img;
+      var evento = document.createTextNode(data[0].organizador+": "+data[0].descripcion+"\n")
+      document.getElementById('bottomcalendario').appendChild(evento);
+      document.getElementById('fotoev').src = data[0].img; 
     }
-  }  
-}
+  }
