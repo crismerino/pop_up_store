@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20141113154005) do
   create_table "eventos", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "img"
     t.string   "organizador"
     t.string   "lugar"
     t.integer  "dia"

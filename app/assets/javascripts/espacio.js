@@ -13,11 +13,13 @@ for(var i=0;i<area.length;i++){
 
 function changeData(data){
   var cajaEventos = document.getElementsByClassName("cajaEventos")[0];
-  
 
-  
   //cajaEventos.innerHTML = "<br>" + "<br>" + "<br>" + data.nombre + "<br>"+ "<br>" + "Aforo: " + data.capacidad + "<br>" + "Descripcion: " + data.descripcion;
 
+  var datoEvento = document.createElement('li');
+  var listaEvento = document.createElement('ul')
+  listaEvento.appendChild(datoEvento);
+  cajaEventos.appendChild(listaEvento);
 
 }
 
