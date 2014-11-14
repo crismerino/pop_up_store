@@ -47,12 +47,11 @@ function showInfo (evt)
     beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
     data: clickedDay,
     success: function (data){
-      console.log("Hola")
+      // console.log("Hola")
       sacaEventos(data);
     }
   })
 
-  // // Fucking paranoia
  function sacaEventos(data){
     if (data) {
       document.getElementById('bottomcalendario').innerHTML = ""
