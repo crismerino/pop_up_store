@@ -20,10 +20,6 @@ class StaticPagesController < ApplicationController
 		end
 	end
 
-	def contacto
-		@contacto = Contacto.new
-	end
-
 	private
 	def contac_params
 		params.require(:contacto).permit(:name, :email, :asunto, :comentario)

@@ -14,6 +14,10 @@
 ActiveRecord::Schema.define(version: 20141113154005) do
 
   create_table "contactos", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "asunto"
+    t.text     "comentario"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
