@@ -33,7 +33,7 @@ function changeData(data){
   var climaSala = document.createElement('li');                        
   climaSala.textContent = "Climatizada.";
 
-  if (data.equipo_informatico === true){
+  if (data.equipo_audiovisual === true){
     var audioSala = document.createElement('li');
     audioSala.textContent = "Multimedia.";
   }else
@@ -58,6 +58,7 @@ function changeData(data){
   cajaEventos.appendChild(listaEvento);
   listaEvento.appendChild(climaSala);
   listaEvento.appendChild(wifiSala);
+  listaEvento.appendChild(audioSala);
   listaEvento.appendChild(pcSala);
 }
 
