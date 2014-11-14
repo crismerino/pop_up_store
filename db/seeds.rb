@@ -15,10 +15,10 @@ sala_grande, sala_visionado, sala_grupo, sala_reuniones, sala_trabajo = Sala.cre
 ])
 
 mu_javascript, mu_angularjs, presentacion_Buleboo, coworking_Ironhack, coworking_Buho, visionado_soft_skills = Evento.create([
-	{organizador: 'Ironhack', lugar: 'Sala Grupo', dia: '2014-11-6', hora: '17:00', duracion: 4, precio: 5, descripcion: 'Se trata de un meetup orientado a la iniciacion en javascript'},
-	{organizador: 'Ironhack', lugar: 'Sala Grupo', dia: '2014-11-10', hora: '16:00', duracion: 6, precio: 5, descripcion: 'Se trata de un meetup orientado a la iniciacion en el framework Angular JS'},
-	{organizador: 'Bulibaa', lugar: 'Sala Reuniones', dia: '2014-11-11', hora: '12:00', duracion: 3, precio: 0, descripcion: 'Reunion del equipo de Bulibaa acerca de su infraestructura interna.'},
-	{organizador: 'Ironhack', lugar: 'Sala Grande', dia: '2014-11-15', hora: '9:00', duracion: 24, precio: 0, descripcion: 'Espacio reservado para Ironhack'},
-	{organizador: 'Buho', lugar: 'Sala Trabajo', dia: '2014-11-20', hora: '9:00', duracion: 24, precio: 0, descripcion: 'Espacio reservado para Buho'},
-	{organizador: 'McDonald', lugar: 'Sala Visionado', dia: '2014-11-6', hora: '17:00', duracion: 4, precio: 20, descripcion: 'Reservado para el meetup sobre soft skills'},	
+	{organizador: 'Ironhack', lugar: 'Sala Grupo', dia: '2014-11-6', hora: '17:00', duracion: 4, precio: 5, descripcion: 'Se trata de un meetup orientado a la iniciacion en javascript', img: '/assets/ev6.jpeg'},
+	{organizador: 'Ironhack', lugar: 'Sala Grupo', dia: '2014-11-10', hora: '16:00', duracion: 6, precio: 5, descripcion: 'Se trata de un meetup orientado a la iniciacion en el framework Angular JS', img: '/assets/ev5.jpg'},
+	{organizador: 'Bulibaa', lugar: 'Sala Reuniones', dia: '2014-11-11', hora: '12:00', duracion: 3, precio: 0, descripcion: 'Reunion del equipo de Bulibaa acerca de su infraestructura interna.', img: '/assets/ev4.jpeg'},
+	{organizador: 'Ironhack', lugar: 'Sala Grande', dia: '2014-11-15', hora: '9:00', duracion: 24, precio: 0, descripcion: 'Espacio reservado para Ironhack', img: '/assets/ev3.jpg'},
+	{organizador: 'Buho', lugar: 'Sala Trabajo', dia: '2014-11-20', hora: '9:00', duracion: 24, precio: 0, descripcion: 'Espacio reservado para Buho', img: '/assets/ev2.jpg'},
+	{organizador: 'McDonald', lugar: 'Sala Visionado', dia: '2014-11-6', hora: '17:00', duracion: 4, precio: 20, descripcion: 'Reservado para el meetup sobre soft skills', img: '/assets/ev1.jpg'},	
 	])

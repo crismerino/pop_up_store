@@ -1,5 +1,6 @@
 class AddFieldsToEventos < ActiveRecord::Migration
   def change
+  	add_column :eventos, :img, :string
   	add_column :eventos, :organizador, :string
   	add_column :eventos, :lugar, :string
   	add_column :eventos, :dia, :string
