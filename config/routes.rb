@@ -3,18 +3,11 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get 'home' => 'static_pages#home'
-
   get 'espacio' => 'static_pages#espacio'
-
   get 'eventos' => 'static_pages#eventos'
-
-  get 'blog' => 'static_pages#blog'
-
-  get 'nosotros' => 'static_pages#nosotros'
-
   get 'contacto' => 'static_pages#contacto'
-
-  resources :contacto, only: [:show]
+  get 'blog' => 'static_pages#blog'
+  get 'nosotros' => 'static_pages#nosotros'
 
   post 'peticion' => 'static_pages#peticion'
   post 'peticion_eventos' => 'static_pages#peticion_eventos'
