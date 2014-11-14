@@ -12,8 +12,13 @@ for(var i=0;i<area.length;i++){
 }
 
 function changeData(data){
-  cajaEventos = document.getElementsByClassName("cajaEventos")[0];
-  cajaEventos.innerHTML = "<br>" + "<br>" + "<br>" + data.nombre + "<br>"+ "<br>" + "Aforo: " + data.capacidad + "<br>" + "Descripcion: " + data.descripcion;
+  var cajaEventos = document.getElementsByClassName("cajaEventos")[0];
+  var datoEvento = document.createElement('li');
+  var listaEvento = document.createElement('ul')
+  listaEvento.appendChild(datoEvento);
+  cajaEventos.appendChild(listaEvento);
+
+  //cajaEventos.innerHTML = "<br>" + "<br>" + "<br>" + data.nombre + "<br>"+ "<br>" + "Aforo: " + data.capacidad + "<br>" + "Descripcion: " + data.descripcion;
 }
 
 function changeRoom(evt){
